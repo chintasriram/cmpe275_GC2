@@ -1,0 +1,27 @@
+In the current project we are implementing Parallel Sorting with Regular Sampling (PSRS) Algorithm using open-mpi.
+
+We can run the project using three modes,
+
+REGULAR (This mode is preferrable to run as this does not have unnecessary print statements)
+
+mpicc sorting_mpi.c -o sorting_mpi
+mpirun --hostfile mpi.config -np number_of_processes ./sorting_mpi array_size
+
+Example:
+mpirun --hostfile mpi.config -np 3 ./sorting_mpi 8
+
+DEBUG
+
+mpicc sorting_mpi.c -o sorting_mpi
+mpirun --hostfile mpi.config -np number_of_processes ./sorting_mpi array_size DEBUG
+
+Example:
+mpirun --hostfile mpi.config -np 3 ./sorting_mpi 8 DEBUG
+
+TIMER
+
+mpicc sorting_mpi.c -o sorting_mpi
+mpirun --hostfile mpi.config -np number_of_processes ./sorting_mpi array_size TIMER
+
+Example:
+mpirun --hostfile mpi.config -np 3 ./sorting_mpi 8 TIMER
